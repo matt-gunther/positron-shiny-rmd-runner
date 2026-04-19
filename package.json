@@ -1,0 +1,35 @@
+{
+  "name": "shiny-console-runner",
+  "displayName": "Shiny Console Runner",
+  "description": "Runs Shiny apps in the R console instead of a terminal process",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "shiny-console-runner.run",
+        "title": "Run Shiny App in R Console"
+      },
+      {
+        "command": "shiny-console-runner.runRmd",
+        "title": "Run Shiny Rmd in R Console"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "shiny-console-runner.run",
+        "key": "ctrl+shift+enter",
+        "when": "!isRPackage && !positron.hasCodeCells && editorLangId == 'r' && shinyConsoleRunner.isShinyProject"
+      },
+      {
+        "command": "shiny-console-runner.runRmd",
+        "key": "ctrl+shift+k",
+        "when": "editorLangId == 'quarto' && shinyConsoleRunner.isShinyRmd"
+      }
+    ]
+  }
+}
