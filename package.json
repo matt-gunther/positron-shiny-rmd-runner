@@ -27,6 +27,7 @@
       },
       {
         "command": "shiny-console-runner.runRmd",
+        "mac": "cmd+shift+k",
         "key": "ctrl+shift+k",
         "when": "editorLangId == 'quarto' && shinyConsoleRunner.isShinyRmd"
       }
